@@ -1,9 +1,18 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" />    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ✅ SEO & Open Graph Meta Tags -->
+    <meta name="description" content="Portafolio de Hebert Cussi, desarrollador de software especializado en aplicaciones web y móviles. Proyectos destacados, habilidades técnicas y contacto." />
+    <meta name="keywords" content="Hebert Cussi, desarrollador, software, web, móviles, Nodejs, Php, Python, Java, JavaScript" />
+    <meta name="author" content="Hebert Cussi Cuentas" />
+    <meta property="og:title" content="Portafolio de Hebert Cussi" />
+    <meta property="og:description" content="Descubre los proyectos y habilidades de Hebert Cussi, un apasionado desarrollador de software con experiencia en diversas tecnologías." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hebertcussi.dev/" />    
     <title>Mi Portafolio</title>
+
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
@@ -24,15 +33,24 @@
       <!-- <h1>Bienvenido a mi sitio web</h1>   -->
     </header>
     <main>
-      <section id="inicio">
+      <section id="inicio" aria-label="Presentación">
         <div class="container person">
           <div class="person-content">
-            <h1>Hola, soy Hebert Cussi</h1>
-            <p>
-              Desarrollador de Software y Analista Programador Universitario
-            </p>
-            <a href="#contacto" class="btn">Contáctame</a>
-          </div>
+            <span class="person-badge">Disponible para proyectos</span>
+            <h1>Hola, soy <br> <strong>Hebert Cussi</strong> </h1>
+            <p> Desarrollador de Software y Analista Programador Universitario especializado en soluciones web modernas.</p>
+            <div class="actions">
+              <a href="#servicios" class="btn bnt--primary">Ver proyectos</a>
+              <a href="#contacto" class="btn btn--secondary">Contáctame</a>            
+            </div>
+            <aside class="person-img" aria-hidden="true">
+              <div class="float-card card--a">React</div>
+              <div class="float-card card--b">Nodejs</div>
+              <div class="float-card card--c">Python</div>
+              <div class="avatar">
+                <div class="avatar-interior">HC</div>
+              </div>
+            </aside>
         </div>
       </section>
       <section id="acercade">
@@ -44,15 +62,34 @@
             el desarrollo de aplicaciones web y móviles, y siempre estoy
             buscando aprender nuevas habilidades para mejorar mis proyectos.
           </p>
-          <p>Lenguajes de programación:</p>
-          <div class="leguajes">
-            <div class="item-l">Nodejs (nestjs, express)</div>
-            <div class="item-l">Php (laravel)</div>
-            <div class="item-l">Python (django)</div>
-            <div class="item-l">Java (spring)</div>
-            <div class="item-l">JavaScript/typescript (react, angular)</div>
-            <div class="item-l">Base de datos (mysql, postgresql, mongodb)</div>
-          </div>
+          <div class="skill-grid" >
+            <article class="skill-card skill--backend">
+              <h3>Backend</h3>
+              <ul>
+                <li>Nodejs (nestjs, express)</li>
+                <li>Php (laravel)</li>
+                <li>Python (django)</li>
+                <li>Java (spring)</li>
+              </ul>
+            </article>
+            <article class="skill-card skill--frontend">
+              <h3>Frontend</h3>
+              <ul>
+                <li>JavaScript/typescript</li>
+                <li>React</li>
+                <li>Angular</li>
+                <li>Vue</li>                
+              </ul>
+            </article>
+            <article class="skill-card skill--database">
+              <h3>Base de Datos</h3>
+              <ul>
+                <li>MySQL</li>
+                <li>PostgreSQL</li>
+                <li>MongoDB</li>
+              </ul>
+            </article>
+          </div>          
         </div>
       </section>
       <section id="servicios">
@@ -95,6 +132,30 @@
       <section id="contacto">
         <div class="container contact">
           <h2 class="section-title">Cantactenos</h2>
+          <div class="contacto-info">
+            <div class="contacto-item">
+              <span class="contacto-icon">📧</span>
+              <div>
+                <strong>Email</strong>
+                <p>tuemail@ejemplo.com</p>
+              </div>
+            </div>
+            <div class="contacto-item">
+              <span class="contacto-icon">📍</span>
+              <div>
+                <strong>Direccion</strong>
+                <p>Calle Bugambilla nro 303, Zona Obrajes, La Paz, Bolivia</p>
+              </div>
+            </div>
+            <div class="contacto-item">
+              <span class="contacto-icon">📞</span>
+              <div>
+                <strong>Respuesta</strong>
+                <p>Menos de 48 horas</p>
+              </div>
+            </div>
+
+          </div>
           <div class="contact-form">
             <form action="#" method="post">
               <div class="form-group">
@@ -118,7 +179,37 @@
                 />
               </div>
               <div class="form-group">
-                <label for="mensaje">Mensaje</label>
+                <label for="presupuesto">Presupuestos Estimado:</label>
+                <span class="rango-valor" id="rango-valor">$1,000 - $5,000</span>
+                <input
+                  type="range"
+                  id="presupuesto"
+                  name="presupuesto"
+                  min="1000"
+                  max="5000"
+                  step="500"
+                  value="3000"
+                />
+              </div>
+              <div class="form-group">
+                  <label for="servicio">Tipo de servicio</label>
+                  <input
+                    type="search"
+                    id="servicio"
+                    name="servicio"
+                    list="servicios-list"
+                    placeholder="Busca un servicio..."
+                  />
+                  <datalist id="servicios-list">
+                    <option value="Desarrollo Web Full Stack">
+                    <option value="API REST / Back-End">
+                    <option value="Diseño UI / Front-End">
+                    <option value="Base de Datos">
+                    <option value="Consultoría Técnica">
+                  </datalist>
+                </div>
+              <div class="form-group">
+                  <label for="mensaje">Mensaje</label>
                 <textarea
                   id="mensaje"
                   name="mensaje"
@@ -135,14 +226,18 @@
       </section>
     </main>
     <footer>
-      <div class="container">
-        <div class="social-links">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <span class="logo">Hebert Cussi</span>
+          <p>Desarrollador Full Stack · La Paz, Bolivia</p>
+        </div>
+        <nav class="social-links">
           <a href="https://github.com/hebertcussi" target="_blank">Github</a>
           <a href="https://www.linkedin.com/in/hebertcussi" target="_blank">LinkedIn</a>
           <a href="https://www.facebook.com/hebertcussi" target="_blank">Facebook</a>
-        </div>
+        </nav>
       </div>
-      <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
+      <p class="footer-copy">&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
     </footer>
   </body>
 </html>
