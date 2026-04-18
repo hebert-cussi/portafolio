@@ -1054,3 +1054,121 @@ textarea:invalid:not(:placeholder-shown) {
     gap: 1.5rem;
   }
 }
+
+
+.poke-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.poke-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  transition: var(--transition);
+  animation: fadeUp 0.4s ease both;
+}
+.poke-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: var(--card-shadow);
+  border-color: var(--accent);
+}
+.poke-card img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin: 0 auto;
+  image-rendering: crisp-edges;
+}
+.poke-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--text-primary);
+  margin-top: 0.3rem;
+}
+.poke-type {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  margin-top: 0.25rem;
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+/* Tipos de Pokémon con colores propios */
+.poke--fire   { border-color: #f97316; } .poke--fire .poke-type   { background: #fff7ed; color: #c2410c; }
+.poke--water  { border-color: #3b82f6; } .poke--water .poke-type  { background: #eff6ff; color: #1d4ed8; }
+.poke--grass  { border-color: #22c55e; } .poke--grass .poke-type  { background: #f0fdf4; color: #15803d; }
+.poke--poison { border-color: #a855f7; } .poke--poison .poke-type { background: #faf5ff; color: #7e22ce; }
+.poke--flying { border-color: #06b6d4; } .poke--flying .poke-type { background: #ecfeff; color: #0e7490; }
+.poke--bug    { border-color: #84cc16; } .poke--bug .poke-type    { background: #f7fee7; color: #4d7c0f; }
+
+
+/* ── REST Countries ─────────────────────────────────────────── */
+.country-search-box input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+.country-search-box input:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+}
+
+.country-result { min-height: 80px; }
+.country-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  animation: fadeUp 0.3s ease both;
+}
+.country-flag {
+  width: 72px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.country-info h4 {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: var(--text-primary);
+}
+.country-info p {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.loading-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 0.5rem 0;
+}
+.error-text {
+  font-size: 0.88rem;
+  color: #ef4444;
+  padding: 0.5rem 0;
+}

@@ -29,6 +29,7 @@
               <li><a href="#inicio">Inicio</a></li>
               <li><a href="#acercade">Acerca de</a></li>
               <li><a href="#servicios">Mis Proyectos</a></li>
+              <li><a href="#apis">Apis</a></li>
               <li><a href="#contacto">Contacto</a></li>
             </ul>
           </nav>
@@ -102,8 +103,15 @@
       <section id="servicios">
         <div class="container projects">
           <h2>Mis proyectos implementados</h2>
-          <div class="projects-grid">
-            <article class="project-card">
+          <div class="filter-bar" role="group" aria-label="Filtrar proyectos">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="frontend">Front-End</button>
+            <button class="filter-btn" data-filter="backend">Back-End</button>
+            <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+          </div>
+          <p class="projects-meta"><span id="project-count"></span></p>
+          <div class="projects-grid" id="projects-grid">
+            <!-- <article class="project-card">
               <div class="project-img">📱</div>
               <div class="project-info">
                 <h3>App de Tareas</h3>
@@ -132,10 +140,54 @@
                   <span class="tech-badge">JavaScript</span>
                 </div>
               </div>
-            </article>
+            </article> -->
+          
           </div>
         </div>
       </section>
+        
+      <section id="apis" aria-label="Consumo de APIs públicas">
+        <div class="container">
+          <header class="section-header">
+            <h2>APIs Públicas en Vivo</h2>
+            <p>Ejemplos reales de Fetch API, <code>async/await</code> y <code>Promise.all</code>.</p>
+          </header>
+
+          <div class="apis-grid">
+
+            <!-- ✅ Sesión 4: PokeAPI – 6 peticiones en paralelo con Promise.all -->
+            <div class="api-panel" id="poke-section">
+              <div class="api-panel__header">
+                <span class="api-badge">PokeAPI</span>
+                <h3>Pokémon con <code>Promise.all()</code></h3>
+                <p>Carga 6 Pokémon <strong>en paralelo</strong>. Cada tarjeta es una promesa independiente.</p>
+              </div>
+              <div id="poke-grid" class="poke-grid"></div>
+              <button id="poke-next" class="btn btn--outline btn--sm">Cargar siguientes →</button>
+            </div>
+
+            <!-- ✅ Sesión 4: REST Countries – Fetch GET + destructuring de respuesta -->
+            <div class="api-panel">
+              <div class="api-panel__header">
+                <span class="api-badge">REST Countries</span>
+                <h3>Buscar país</h3>
+                <p>Fetch GET con <strong>async/await</strong> y <strong>destructuring</strong> del objeto JSON.</p>
+              </div>
+              <div class="country-search-box">
+                <input
+                  type="search"
+                  id="country-search"
+                  placeholder="Escribe un país… ej: Bolivia"
+                  aria-label="Buscar país"
+                />
+              </div>
+              <div id="country-result" class="country-result"></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      
       <section id="contacto" aria-label="Contacto">
         <div class="container contact">
           <h2 class="section-title">Cantactenos</h2>
@@ -260,5 +312,6 @@
         });
       }
     </script>
+    <script src="assets/js/app.js"></script>
   </body>
 </html>
